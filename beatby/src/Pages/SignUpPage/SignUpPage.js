@@ -34,18 +34,21 @@ export const SignUpPage = () => {
             value={form.name}
             onChange={onChange}
             label={"Nome"}
+            placeholder={"nome"}
           />
           <input
             name={"nickname"}
             value={form.nickname}
             onChange={onChange}
             label={"Nickname"}
+            placeholder={"nickname"}
           />
           <input
             name={"email"}
             value={form.email}
             onChange={onChange}
             label={"Email"}
+            placeholder={"email"}
           />
 
           <input
@@ -53,6 +56,7 @@ export const SignUpPage = () => {
             value={form.password}
             onChange={onChange}
             label={"Senha"}
+            placeholder={"senha"}
           />
 
           <FormButtonContainer>
