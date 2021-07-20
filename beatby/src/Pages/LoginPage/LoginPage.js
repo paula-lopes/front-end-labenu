@@ -31,13 +31,13 @@ export const LoginPage = () => {
             name={"email"}
             value={form.email}
             onChange={onChange}
-            label={"Email"}
+            placeholder={"email"}
           />
           <input
             name={"password"}
             value={form.password}
             onChange={onChange}
-            label={"Senha"}
+            placeholder={"senha"}
           />
           <ButtonContainer>
             <button>LOGIN</button>

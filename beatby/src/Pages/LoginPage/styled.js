@@ -42,7 +42,7 @@ export const ButtonContainer = styled.div`
   height: 200px;
   align-items: center;
   justify-content: flex-start;
-  cursor: pointer;
+ 
 
   button {
     background-color: black;
@@ -50,6 +50,7 @@ export const ButtonContainer = styled.div`
     height: 60px;
     margin-top: 10px;
     color: ${primaryColor};
+    cursor: pointer;
   }
 `;
 

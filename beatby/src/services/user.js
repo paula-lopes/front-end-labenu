@@ -10,7 +10,7 @@ export const login = (form, clear, history) => {
       clear();
       goToMusicsListPage(history);
     })
-    .catch((err) => alert("Dados Inválidos"));
+    .catch((err) => alert("Senha ou login incorretos"));
 };
 export const signUp = (form, clear, history) => {
   axios
