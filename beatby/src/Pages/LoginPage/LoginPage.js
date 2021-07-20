@@ -5,11 +5,21 @@ import useForm from "hooks/useForm";
 import Image from "components/Image";
 import Logo from "assets/logo.png";
 import { LogoContainer } from "./styled";
+import  {useHistory } from "react-router-dom";
+import { login } from "services/user";
+import { goToSignUp } from "routes/coordinator";
+
 
 export const LoginPage = () => {
-  const onSubmitForm = () => {};
+  const history = useHistory();
+  const onSubmitForm = (event) => {
+    event.preventDefault();
+    login(form,clear,history);
+   
+  };
 
   const [form, onChange, clear] = useForm({ email: "", password: "" });
+  
   return (
     <MainContainer>
       <form onSubmit={onSubmitForm}>
@@ -31,7 +41,7 @@ export const LoginPage = () => {
           />
           <ButtonContainer>
             <button>LOGIN</button>
-            <button>CADASTRE-SE</button>
+            <button onClick={()=>{goToSignUp(history)}}>CADASTRE-SE</button>
           </ButtonContainer>
         </InputContainer>
       </form>

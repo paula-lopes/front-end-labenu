@@ -1,13 +1,10 @@
 import Image from "components/Image";
-import Guitar from "assets/Guitar.png";
-import { GuitarImageContainer } from "./styled";
 import VinilNotes from "assets/vinil-notes.png";
 import  {ImageGirlContainer} from "./styled"
-
 import Logo from "assets/logo.png";
 import useForm from "hooks/useForm";
 
-import MusicalNote from "assets/MusicalNote.png";
+
 import { ImageNoteContainer } from "./styled";
 import { CreateMusicContainer } from "./styled";
 import { InputContainer } from "./styled";

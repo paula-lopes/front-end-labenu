@@ -42,6 +42,7 @@ export const ButtonContainer = styled.div`
   height: 200px;
   align-items: center;
   justify-content: flex-start;
+  cursor: pointer;
 
   button {
     background-color: black;

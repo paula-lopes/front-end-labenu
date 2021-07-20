@@ -46,6 +46,7 @@ export const LogoutButton = styled.button`
   width: 200px;
   height: 45px;
   margin-right: 80px;
+  cursor: pointer;
 `;
 export const GuitarImageContainer = styled.div``;
 

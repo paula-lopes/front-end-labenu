@@ -11,7 +11,6 @@ export const MainSignUpContainer = styled.div`
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-size: 100%;
   overflow: hidden;
 `;
 
@@ -25,11 +24,12 @@ export const LogoButtonContainer = styled.div`
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 155px;
+  margin-bottom: 100px;
+
   input {
     height: 45px;
     width: 400px;
-    background-color: #c4c4c4;
+    background-color: #ffffff;
     border: none;
     margin-top: 20px;
   }
@@ -48,6 +48,7 @@ export const FormButtonContainer = styled.div`
     color: ${primaryColor};
     background-color: ${secondaryColor};
     border: none;
+    cursor:pointer;
   }
 `;
 export const ImageNoteContainer = styled.div`
@@ -55,10 +56,6 @@ export const ImageNoteContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-export const GuitarImageContainer = styled.div`
-  position: absolute;
-  margin-top: 350px;
-`;
 export const LoginButton = styled.button`
   color: ${primaryColor};
   background-color: ${secondaryColor};
@@ -66,6 +63,7 @@ export const LoginButton = styled.button`
   width: 200px;
   height: 45px;
   margin-right: 80px;
+  cursor: pointer;
 `;
 
 export const ImageLogoContainer = styled.div`
