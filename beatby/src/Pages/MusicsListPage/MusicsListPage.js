@@ -10,8 +10,8 @@ import { Title } from "./styled";
 import Logo from "assets/logo.png";
 import Image from "components/Image";
 import useRequestData from "hooks/useRequestData";
-import useProtectedPage  from "hooks/useProtectedPage";
-import {logout} from "../../services/user"
+import useProtectedPage from "hooks/useProtectedPage";
+import { logout } from "../../services/user";
 import { useHistory } from "react-router-dom";
 export const MusicsListPage = () => {
   useProtectedPage();
@@ -29,6 +29,7 @@ export const MusicsListPage = () => {
     } else {
       setModalDisplay("flex");
     }
+    return id;
   };
 
   const musicCards =
@@ -40,6 +41,11 @@ export const MusicsListPage = () => {
           musicName={music.title}
           authorName={music.author}
           showModal={showModal}
+          modalDisplay={modalDisplay}
+          genres={music.genres}
+          date={music.date}
+          album={music.album}
+          id={music.id}
         />
       );
     });
@@ -50,12 +56,17 @@ export const MusicsListPage = () => {
         <ImageLogoContainer>
           <Image alt="logo" height={"100"} src={Logo} width={"200"} />
         </ImageLogoContainer>
-        <LogoutButton onClick={()=>{logout(history)}}>Logout</LogoutButton>
+        <LogoutButton
+          onClick={() => {
+            logout(history);
+          }}
+        >
+          Logout
+        </LogoutButton>
       </LogoButtonContainer>
       <Title>Histórico</Title>
 
       <GridContainer>{musicCards}</GridContainer>
-      <Modal showModal={showModal} modalDisplay={modalDisplay} />
     </MainContainer>
   );
 };

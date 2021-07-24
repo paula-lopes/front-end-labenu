@@ -1,11 +1,18 @@
+import useRequestData from "hooks/useRequestData";
 import {
   HeaderModalContainer,
   ModalContainer,
   MainContainer,
   CloseModalButton,
+  InformationModalContainer,
 } from "./styled";
-export const Modal = ({ showModal, modalDisplay, year,genre,album }) => {
-  
+export const Modal = ({ showModal, modalDisplay, date, genres, album }) => {
+  const year = date.substring(0, 4);
+  const musics = useRequestData(
+    [],
+    "http://ec2-44-195-40-169.compute-1.amazonaws.com/music"
+  );
+
   return (
     <MainContainer display={modalDisplay}>
       <ModalContainer>
@@ -19,9 +26,17 @@ export const Modal = ({ showModal, modalDisplay, year,genre,album }) => {
             X
           </CloseModalButton>
         </HeaderModalContainer>
-        <h4>Ano{year}</h4>
-        <h4>Gênero{genre}</h4>
-        <h4>Álbum{album}</h4>
+        <InformationModalContainer>
+          <h4>
+            Ano<p>{year}</p>
+          </h4>
+          <h4>
+            Gênero Musical<p>{genres}</p>
+          </h4>
+          <h4>
+            Álbum<p>{album}</p>
+          </h4>
+        </InformationModalContainer>
       </ModalContainer>
     </MainContainer>
   );

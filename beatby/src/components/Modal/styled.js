@@ -43,3 +43,12 @@ export const HeaderModalContainer = styled.div`
   display: flex;
   align-items: center;
 `;
+
+export const InformationModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  line-height:0;
+  align-items:center;
+  justify-content:center;
+  width:800px;
+`;

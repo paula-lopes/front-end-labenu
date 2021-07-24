@@ -3,8 +3,6 @@ import VinilNotes from "assets/vinil-notes.png";
 import  {ImageGirlContainer} from "./styled"
 import Logo from "assets/logo.png";
 import useForm from "hooks/useForm";
-
-
 import { ImageNoteContainer } from "./styled";
 import { CreateMusicContainer } from "./styled";
 import { InputContainer } from "./styled";
