@@ -31,9 +31,6 @@ export const Modal = ({ showModal, modalDisplay, date, genres, album }) => {
             Ano<p>{year}</p>
           </h4>
           <h4>
-            Gênero Musical<p>{genres}</p>
-          </h4>
-          <h4>
             Álbum<p>{album}</p>
           </h4>
         </InformationModalContainer>

@@ -13,24 +13,16 @@ import useRequestData from "hooks/useRequestData";
 import useProtectedPage from "hooks/useProtectedPage";
 import { logout } from "../../services/user";
 import { useHistory } from "react-router-dom";
+import {AddMusicButton} from "./styled"
+import { goToCreateMusicPage } from "routes/coordinator";
 export const MusicsListPage = () => {
   useProtectedPage();
-  const [modalDisplay, setModalDisplay] = useState("none");
   const history = useHistory();
 
   const musics = useRequestData(
     [],
     "http://ec2-44-195-40-169.compute-1.amazonaws.com/music"
   );
-
-  const showModal = (display, id) => {
-    if (display === "none") {
-      setModalDisplay("none");
-    } else {
-      setModalDisplay("flex");
-    }
-    return id;
-  };
 
   const musicCards =
     musics.data &&
@@ -40,8 +32,6 @@ export const MusicsListPage = () => {
           key={music.id}
           musicName={music.title}
           authorName={music.author}
-          showModal={showModal}
-          modalDisplay={modalDisplay}
           genres={music.genres}
           date={music.date}
           album={music.album}
@@ -67,6 +57,7 @@ export const MusicsListPage = () => {
       <Title>Histórico</Title>
 
       <GridContainer>{musicCards}</GridContainer>
+      <AddMusicButton onClick = {()=> goToCreateMusicPage(history)} >+</AddMusicButton>
     </MainContainer>
   );
 };

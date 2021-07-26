@@ -37,6 +37,7 @@ export const CreateMusicButton = styled.button`
   color: ${primaryColor};
   background-color: ${secondaryColor};
   border: none;
+  cursor: pointer;
 `;
 export const ImageNoteContainer = styled.div``;
 export const LogoutButton = styled.button`
@@ -55,3 +56,5 @@ export const ImageGirlContainer = styled.div`
   margin-right: 60%;
   margin-top: 10%;
 `;
+
+

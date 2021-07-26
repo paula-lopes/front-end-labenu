@@ -38,6 +38,7 @@ export const LoginPage = () => {
             value={form.password}
             onChange={onChange}
             placeholder={"senha"}
+            type={"password"}
           />
           <ButtonContainer>
             <button>LOGIN</button>

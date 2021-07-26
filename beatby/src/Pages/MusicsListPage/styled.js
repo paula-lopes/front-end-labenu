@@ -39,3 +39,16 @@ export const Title = styled.h1`
   font-size: 55px;
 `;
 
+export const AddMusicButton = styled.button`
+  border-radius: 50px;
+  background-color: ${secondaryColor};
+  border:none;
+  width:50px;
+  height:50px;
+  color:${primaryColor};
+  font-size:40px;
+  position:relative;
+  margin-left:90%;
+  cursor:pointer;
+`;
+

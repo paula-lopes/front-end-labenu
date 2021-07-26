@@ -1,22 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { CardContainer } from "./styled";
 import { Title } from "./styled";
 import { Author } from "./styled";
 import { Modal } from "../Modal/Modal";
 
-const MusicCard = ({
-  musicName,
-  authorName,
-  showModal,
-  modalDisplay,
-  genres,
-  date,
-  album,
-  id,
-}) => {
+const MusicCard = ({ musicName, authorName, genres, date, album, id }) => {
+  const [modalDisplay, setModalDisplay] = useState("none");
+
+  const showModal = (display) => {
+    if (display === "none") {
+      setModalDisplay("none");
+    } else {
+      setModalDisplay("flex");
+    }
+  };
   return (
     <>
-      <CardContainer onClick={() => showModal("flex", id)}>
+      <CardContainer onClick={() => showModal("flex")}>
         <Title>{musicName}</Title>
         <Author>{authorName}</Author>
       </CardContainer>

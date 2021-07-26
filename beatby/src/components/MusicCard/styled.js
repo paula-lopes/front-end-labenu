@@ -15,6 +15,8 @@ export const CardContainer = styled.div`
   line-height:0px;
  
  
+ 
+ 
 `;
 
 export const Title = styled.h2`
@@ -26,3 +28,4 @@ export const Author = styled.h4`
 
 
 `
+

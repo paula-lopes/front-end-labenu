@@ -1,6 +1,6 @@
 import Image from "components/Image";
 import VinilNotes from "assets/vinil-notes.png";
-import  {ImageGirlContainer} from "./styled"
+import { ImageGirlContainer } from "./styled";
 import Logo from "assets/logo.png";
 import useForm from "hooks/useForm";
 import { ImageNoteContainer } from "./styled";
@@ -9,8 +9,12 @@ import { InputContainer } from "./styled";
 import { LogoLogoutButtonContainer } from "./styled";
 import { LogoutButton } from "./styled";
 import { CreateMusicButton } from "./styled";
+import { useHistory } from "react-router-dom";
+import { createMusic } from "../../services/music";
+import { logout } from "services/user";
+
 export const CreateMusicPage = () => {
-  const onSubmitForm = () => {};
+  const history = useHistory();
   const [form, onChange, clear] = useForm({
     title: "",
     author: "",
@@ -18,53 +22,56 @@ export const CreateMusicPage = () => {
     genre: "",
     album: "",
   });
+
+  const onSubmitForm = (event) => {
+    event.preventDefault();
+    createMusic(form, clear,history);
+  };
   return (
     <form onSubmit={onSubmitForm}>
       <CreateMusicContainer>
         <LogoLogoutButtonContainer>
           <Image alt="logo" height={"100"} src={Logo} width={"200"} />
-          <LogoutButton>Logout</LogoutButton>
+          <LogoutButton onClick ={()=>logout(history)}>Logout</LogoutButton>
         </LogoLogoutButtonContainer>
         <ImageNoteContainer>
           <h1>Crie sua Música</h1>
-      
         </ImageNoteContainer>
         <InputContainer>
           <input
-            name={"name"}
-            value={form.name}
+            name={"title"}
+            value={form.title}
             onChange={onChange}
-            label={"Nome"}
+            placeholder={"título"}
           />
           <input
-            name={"nickname"}
-            value={form.nickname}
+            name={"author"}
+            value={form.author}
             onChange={onChange}
-            label={"Nickname"}
+            placeholder={"autor"}
           />
           <input
-            name={"email"}
-            value={form.email}
+            name={"file"}
+            value={form.file}
             onChange={onChange}
-            label={"Email"}
+            placeholder={"arquivo"}
           />
           <input
-            name={"email"}
-            value={form.email}
+            name={"genre"}
+            value={form.genre}
             onChange={onChange}
-            label={"Email"}
+            placeholder={"gênero"}
           />
 
           <input
-            name={"password"}
-            value={form.password}
+            name={"album"}
+            value={form.album}
             onChange={onChange}
-            label={"Senha"}
+            placeholder={"álbum"}
           />
         </InputContainer>
         <ImageGirlContainer>
-        <Image alt="logo" height={"300"} src={VinilNotes} width={"480"} />
-        
+          <Image alt="logo" height={"300"} src={VinilNotes} width={"480"} />
         </ImageGirlContainer>
         <CreateMusicButton>CRIAR MÚSICA</CreateMusicButton>
       </CreateMusicContainer>
