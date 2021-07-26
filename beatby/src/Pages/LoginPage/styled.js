@@ -11,7 +11,6 @@ export const MainContainer = styled.div`
   background-repeat: no-repeat;
   align-items: center;
   justify-content: center;
-  background-color: red;
 `;
 
 export const InputContainer = styled.div`
@@ -42,7 +41,6 @@ export const ButtonContainer = styled.div`
   height: 200px;
   align-items: center;
   justify-content: flex-start;
- 
 
   button {
     background-color: black;
