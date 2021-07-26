@@ -11,7 +11,6 @@ export const MainContainer = styled.div`
   background-repeat: no-repeat;
   align-items: center;
   justify-content: center;
-  background-color: red;
 `;
 
 export const InputContainer = styled.div`
@@ -49,6 +48,7 @@ export const ButtonContainer = styled.div`
     height: 60px;
     margin-top: 10px;
     color: ${primaryColor};
+    cursor: pointer;
   }
 `;
 
